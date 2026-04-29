@@ -1,0 +1,60 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Build SDL2 Project",
+      "command": "C:/mingw64/bin/g++.exe",
+      "args": [
+        "-g",
+        "-w",
+        "-std=c++23",
+
+        "${workspaceFolder}/src/Main.cpp",
+        "${workspaceFolder}/src/Game.cpp",
+        "${workspaceFolder}/src/Logger.cpp",
+        "${workspaceFolder}/src/ECS/ECS.cpp",
+        "${workspaceFolder}/src/ECS/AssetStore.cpp",
+
+        "${workspaceFolder}/src/SDL2Ext/SDL2_gfxPrimitives.c",
+        "${workspaceFolder}/src/SDL2Ext/SDL2_imageFilter.c",
+        "${workspaceFolder}/src/SDL2Ext/SDL2_rotozoom.c",
+
+        "${workspaceFolder}/vendor/imgui/imgui.cpp",
+        "${workspaceFolder}/vendor/imgui/imgui_demo.cpp",
+        "${workspaceFolder}/vendor/imgui/imgui_draw.cpp",
+        "${workspaceFolder}/vendor/imgui/imgui_tables.cpp",
+        "${workspaceFolder}/vendor/imgui/imgui_widgets.cpp",
+        "${workspaceFolder}/vendor/imgui/backends/imgui_impl_sdl2.cpp",
+
+        "-I${workspaceFolder}/include",
+        "-I${workspaceFolder}/vendor/SDL2/include",
+        "-I${workspaceFolder}/vendor/glm",
+        "-I${workspaceFolder}/vendor/imgui",
+        "-I${workspaceFolder}/vendor/imgui/backends",
+        "-I${workspaceFolder}/vendor/lua",
+        "-I${workspaceFolder}/vendor/sol2/include",
+        "-L${workspaceFolder}/lib",
+        "-lmingw32",
+        "-lSDL2main",
+        "-lSDL2",
+        "-lSDL2_image",
+        "-lSDL2_mixer",
+        "-lSDL2_ttf",
+        "-llua53",
+
+        "-o",
+        "${workspaceFolder}/bin/game.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Builds the SDL2 project into bin/game.exe"
+    }
+  ]
+}
